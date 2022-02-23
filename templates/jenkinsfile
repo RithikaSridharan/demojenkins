@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-        registry = "mkbn/mypythonapp"
+        registry = "rithikasridharan/dockerrepo"
         registryCredential = 'dockerhub_id'
         dockerImage = ''
     }
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/MKBN/mbn-simpli-project01']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/RithikaSridharan/Jenkins-project01.git']]])
             }
         }
     // Building Docker images
